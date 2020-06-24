@@ -1,9 +1,9 @@
 /**
- * @function Number - Returns the number of times that the patterns occurs in the DNA chain
+ * @description Count the frequencies of a pattern in a genome
  *
- * @param {String} chain - The DNA chain string
+ * @param {String} chain - The genome string
  * @param {String} pattern - The pattern that will be searched
- * @returns Returns the number of times that the patterns occurs in the string
+ * @returns The number of times that the pattern occurs in the string.
  */
 function PatternCount(chain, pattern) {
   let count = 0;

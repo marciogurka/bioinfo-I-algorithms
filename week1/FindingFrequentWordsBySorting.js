@@ -3,12 +3,11 @@ import NumberToPattern from "./NumberToPattern";
 
 
 /**
- * @function Object - Returns all the patterns by size and the most common patterns
+ * @description Find all frequencies of a DNA sequence
  *
- *
- * @param {String} genome - The DNA genome string
- * @param {Number} k - The pattern size that will be searched
- * @returns Set with all the frequent words in the genome
+ * @param {String} genome - The genome string that will be processed
+ * @param {Number} k - Size of the pattern to be searched
+ * @returns All frequences from the genome
  */
 function FindingFrequentWordsBySorting(genome, k) {
   const frequentPatterns = new Set();

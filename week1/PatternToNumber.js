@@ -1,10 +1,10 @@
 import SymbolToNumber from "./SymbolToNumber";
 
 /**
+ * @description Convert the pattern to a respective number.
  *
- *
- * @param {String} pattern - The pattern that will be searched
- * @returns The number that represents the pattern
+ * @param {String} pattern - The pattern that will be converted
+ * @returns The number that represents the pattern.
  */
 function PatternToNumber(pattern) {
   if (!pattern || pattern.length === 0) return 0;

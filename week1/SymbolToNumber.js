@@ -1,8 +1,8 @@
 /**
- *
+ * @description Convert the symbol to a number
  *
  * @param {String} symbol - The nucleotide that will be converted
- * @returns A number that represents the symbol
+ * @returns The number that represents the nucleotide
  */
 function SymbolToNumber(symbol) {
   switch (symbol.toUpperCase()) {

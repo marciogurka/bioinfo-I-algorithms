@@ -3,7 +3,7 @@ import NumberToPattern from "./NumberToPattern";
 import PatternToNumber from "./PatternToNumber";
 
 /**
- * @function Object - Find patterns forming clumps in a string.
+ * @description Find patterns forming clumps in a string.
  *
  * @param {String} genome - The DNA chain string
  * @param {Number} k - Size of the clump string to be searched

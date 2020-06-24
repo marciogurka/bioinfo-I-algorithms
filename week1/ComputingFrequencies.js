@@ -1,11 +1,11 @@
 import PatternToNumber from "./PatternToNumber";
 
 /**
- * @function Object - Find patterns forming clumps in a string.
+ * @description Find all frequencies of a DNA sequence
  *
  * @param {String} genome - The genome string that will be processed
  * @param {Number} k - Size of the pattern to be searched
- * @returns All distinct k-mers forming (L, t)-clumps in Genome.
+ * @returns All frequences from the genome
  */
 function ComputingFrequencies(genome, k) {
   const numberOfOperations = Math.pow(4, k) - 1;

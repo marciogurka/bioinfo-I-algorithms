@@ -1,8 +1,9 @@
 /**
- *
+ * @description Find all occurrences of a pattern in a string.
+ * 
  * @param {String} pattern - The pattern that will be searched
  * @param {String} genome - The DNA chain string
- * @returns A collection of space-separated integers specifying all starting positions where Pattern appears as a substring of Genome.
+ * @returns All starting positions in Genome where PAttern appears as a substring.
  */
 function PatternMatching(pattern, genome) {
   let result = "";

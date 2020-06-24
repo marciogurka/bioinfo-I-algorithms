@@ -1,11 +1,11 @@
 import NumberToSymbol from "./NumberToSymbol";
 
 /**
+ * @description Convert the number to a respective pattern.
  *
- *
- * @param {Number} index
- * @param {Number} k
- * @returns
+ * @param {Number} index - The value that will be converted
+ * @param {Number} k - The k-mer that will be used to convert
+ * @returns The pattern that represents the number.
  */
 function NumberToPattern(index, k) {
   if (k === 1) return NumberToSymbol(index);

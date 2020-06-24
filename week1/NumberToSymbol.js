@@ -1,5 +1,5 @@
 /**
- *
+ * @description Convert the number to a symbol
  *
  * @param {Number} number - The index of the nucleotide
  * @returns The char that represents the nucleotide

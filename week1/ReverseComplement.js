@@ -1,8 +1,8 @@
 /**
+ * @description Find the reverse complement of a DNA string.
  *
- *
- * @param {String} genome - The DNA string that will be searched
- * @returns The string complement of the DNA chain
+ * @param {String} genome - The DNA string pattern
+ * @returns The reverse complement of the pattern.
  */
 function ReverseComplement(genome) {
   const getComplement = (nucleotide) => {
