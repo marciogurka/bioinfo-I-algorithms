@@ -1,6 +1,6 @@
-import ComputingFrequencies from "./ComputingFrequencies";
-import NumberToPattern from "./NumberToPattern";
-import PatternToNumber from "./PatternToNumber";
+import ComputingFrequencies from './ComputingFrequencies';
+import NumberToPattern from './NumberToPattern';
+import PatternToNumber from './PatternToNumber';
 
 /**
  * @description Find patterns forming clumps in a string.
@@ -12,38 +12,39 @@ import PatternToNumber from "./PatternToNumber";
  * @returns All distinct k-mers forming (L, t)-clumps in Genome.
  */
 function BetterClumpFinding(genome, k, t, L) {
-  const frequentPatterns = new Set();
-  const clump = [];
-  for (let i = 0; i <= Math.pow(4, k) - 1; i++) {
-    clump[i] = false;
-  }
-  const text = genome.substr(0, L);
-  const frequencyArray = ComputingFrequencies(text, k);
-  for (let i = 0; i <= Math.pow(4, k) - 1; i++) {
-    if (frequencyArray[i] >= t) {
-      clump[i] = true;
-    }
-  }
-  for (let i = 0; i <= genome.length - L; i++) {
-    const firstPattern = genome.substr(i - 1, k);
-    let index = PatternToNumber(firstPattern);
-    frequencyArray[index] = frequencyArray[index] - 1;
-    const lastPattern = genome.substr(i + L - k, k);
-    index = PatternToNumber(lastPattern);
-    frequencyArray[index] = frequencyArray[index] + 1;
-    if (frequencyArray[index] >= t) {
-      clump[index] = true;
-    }
-  }
+	const frequentPatterns = new Set();
+	const clump = [];
+	for (let i = 0; i <= 4 ** k - 1; i++) {
+		clump[i] = false;
+	}
 
-  for (let i = 0; i <= Math.pow(4, k) - 1; i++) {
-    if (clump[i]) {
-      const pattern = NumberToPattern(i, k);
-      frequentPatterns.add(pattern);
-    }
-  }
+	const text = genome.substr(0, L);
+	const frequencyArray = ComputingFrequencies(text, k);
+	for (let i = 0; i <= 4 ** k - 1; i++) {
+		if (frequencyArray[i] >= t) {
+			clump[i] = true;
+		}
+	}
+	for (let i = 0; i <= genome.length - L; i++) {
+		const firstPattern = genome.substr(i - 1, k);
+		let index = PatternToNumber(firstPattern);
+		frequencyArray[index] = frequencyArray[index] - 1;
+		const lastPattern = genome.substr(i + L - k, k);
+		index = PatternToNumber(lastPattern);
+		frequencyArray[index] = frequencyArray[index] + 1;
+		if (frequencyArray[index] >= t) {
+			clump[index] = true;
+		}
+	}
 
-  return frequentPatterns;
+	for (let i = 0; i <= 4 ** k - 1; i++) {
+		if (clump[i]) {
+			const pattern = NumberToPattern(i, k);
+			frequentPatterns.add(pattern);
+		}
+	}
+
+	return frequentPatterns;
 }
 
 // Example

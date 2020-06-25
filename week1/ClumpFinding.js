@@ -1,5 +1,5 @@
-import ComputingFrequencies from "./ComputingFrequencies";
-import NumberToPattern from "./NumberToPattern";
+import ComputingFrequencies from './ComputingFrequencies';
+import NumberToPattern from './NumberToPattern';
 
 /**
  * @description Find patterns forming clumps in a string.
@@ -11,29 +11,29 @@ import NumberToPattern from "./NumberToPattern";
  * @returns All distinct k-mers forming (L, t)-clumps in Genome.
  */
 function ClumpFinding(genome, k, t, L) {
-  const frequentPatterns = new Set();
-  const clump = [];
-  for (let i = 0; i <= Math.pow(4, k) - 1; i++) {
-    clump[i] = false;
-  }
-  for (let i = 0; i <= genome.length - L; i++) {
-    const text = genome.substr(i, L);
-    const frequencyArray = ComputingFrequencies(text, k);
-    for (let j = 0; j <= Math.pow(4, k) - 1; j++) {
-      if (frequencyArray[j] >= t) {
-        clump[j] = true;
-      }
-    }
-  }
+	const frequentPatterns = new Set();
+	const clump = [];
+	for (let i = 0; i <= 4 ** k - 1; i++) {
+		clump[i] = false;
+	}
+	for (let i = 0; i <= genome.length - L; i++) {
+		const text = genome.substr(i, L);
+		const frequencyArray = ComputingFrequencies(text, k);
+		for (let j = 0; j <= 4 ** k - 1; j++) {
+			if (frequencyArray[j] >= t) {
+				clump[j] = true;
+			}
+		}
+	}
 
-  for (let i = 0; i <= Math.pow(4, k) - 1; i++) {
-    if (clump[i]) {
-      const pattern = NumberToPattern(i, k);
-      frequentPatterns.add(pattern);
-    }
-  }
+	for (let i = 0; i <= 4 ** k - 1; i++) {
+		if (clump[i]) {
+			const pattern = NumberToPattern(i, k);
+			frequentPatterns.add(pattern);
+		}
+	}
 
-  return frequentPatterns;
+	return frequentPatterns;
 }
 
 // Example

@@ -5,35 +5,35 @@
  * @returns The reverse complement of the pattern.
  */
 function ReverseComplement(genome) {
-  const getComplement = (nucleotide) => {
-    switch (nucleotide.toUpperCase()) {
-      case "A":
-        return "T";
-      case "T":
-        return "A";
-      case "G":
-        return "C";
-      case "C":
-        return "G";
-      default:
-        return "X";
-    }
-  };
-  // Use the split() method to return a new array
-  const splitChain = genome.split("");
+	const getComplement = (nucleotide) => {
+		switch (nucleotide.toUpperCase()) {
+			case 'A':
+				return 'T';
+			case 'T':
+				return 'A';
+			case 'G':
+				return 'C';
+			case 'C':
+				return 'G';
+			default:
+				return 'X';
+		}
+	};
+	// Use the split() method to return a new array
+	const splitChain = genome.split('');
 
-  // Transform all the chain into a complementary chain (not reversed yet)
-  complementArrayNotReversed = splitChain.map((nucleotide) => {
-    return getComplement(nucleotide);
-  });
+	// Transform all the chain into a complementary chain (not reversed yet)
+	const complementArrayNotReversed = splitChain.map((nucleotide) => {
+		return getComplement(nucleotide);
+	});
 
-  // Use the reverse() method to reverse the complementary array
-  const reverseArray = complementArrayNotReversed.reverse();
+	// Use the reverse() method to reverse the complementary array
+	const reverseArray = complementArrayNotReversed.reverse();
 
-  // Use the join() method to join all elements of the array into a string
-  const joinArray = reverseArray.join("");
+	// Use the join() method to join all elements of the array into a string
+	const joinArray = reverseArray.join('');
 
-  return joinArray;
+	return joinArray;
 }
 
 // const text =

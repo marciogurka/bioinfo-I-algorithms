@@ -1,4 +1,4 @@
-import PatternToNumber from "./PatternToNumber";
+import PatternToNumber from './PatternToNumber';
 
 /**
  * @description Find all frequencies of a DNA sequence
@@ -8,18 +8,18 @@ import PatternToNumber from "./PatternToNumber";
  * @returns All frequences from the genome
  */
 function ComputingFrequencies(genome, k) {
-  const numberOfOperations = Math.pow(4, k) - 1;
-  const frequencyArray = [];
-  for (let i = 0; i <= numberOfOperations; i++) {
-    frequencyArray[i] = 0;
-  }
+	const numberOfOperations = 4 ** k - 1;
+	const frequencyArray = [];
+	for (let i = 0; i <= numberOfOperations; i++) {
+		frequencyArray[i] = 0;
+	}
 
-  for (let i = 0; i <= genome.length - k; i++) {
-    const pattern = genome.substr(i, k);
-    const j = PatternToNumber(pattern);
-    frequencyArray[j] = frequencyArray[j] + 1;
-  }
-  return frequencyArray;
+	for (let i = 0; i <= genome.length - k; i++) {
+		const pattern = genome.substr(i, k);
+		const j = PatternToNumber(pattern);
+		frequencyArray[j] += 1;
+	}
+	return frequencyArray;
 }
 
 // Example

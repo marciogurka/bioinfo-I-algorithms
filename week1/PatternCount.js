@@ -6,13 +6,13 @@
  * @returns The number of times that the pattern occurs in the string.
  */
 function PatternCount(chain, pattern) {
-  let count = 0;
-  for (let i = 0; i <= chain.length - pattern.length; i++) {
-    if (chain.substring(i, i + pattern.length) === pattern) {
-      count++;
-    }
-  }
-  return count;
+	let count = 0;
+	for (let i = 0; i <= chain.length - pattern.length; i++) {
+		if (chain.substring(i, i + pattern.length) === pattern) {
+			count++;
+		}
+	}
+	return count;
 }
 
 // Example
