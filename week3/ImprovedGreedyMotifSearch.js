@@ -9,7 +9,7 @@ import Score from './Score';
  * @param {Array} dna - Array of strings that will be processed
  * @param {Number} k - size of the k-mer that will be searched
  * @param {Number} t - number of chains that the dna have
- * @returns The profile most-probable k-mer
+ * @returns The profile most-probable k-mer(s)
  */
 function ImprovedGreedyMotifSearch(dna, k, t) {
 	const base = dna[0];
