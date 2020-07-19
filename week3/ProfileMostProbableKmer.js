@@ -1,6 +1,14 @@
+/**
+ * @description Find a Profile-most probable k-mer in a string based on the profile
+ *
+ * @param {String} text - The string that will be processed
+ * @param {Number} k - Size of the k-mer that will be searched
+ * @param {Object} profile - The profile matrix
+ * @returns The profile-most probable k-mer in the string based on the profile
+ */
 function ProfileMostProbableKmer(text, k, profile) {
 	const kmersProbability = {};
-	let maxProbability = 0;
+	let maxProbability = -1;
 	let maxProbabilityKmer = null;
 	for (let i = 0; i <= text.length - k; i += 1) {
 		const kmer = text.substr(i, k);
@@ -20,7 +28,7 @@ function ProfileMostProbableKmer(text, k, profile) {
 		}
 	});
 
-	return { maxProbability, maxProbabilityKmer };
+	return maxProbabilityKmer;
 }
 
 export default ProfileMostProbableKmer;

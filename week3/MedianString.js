@@ -15,7 +15,7 @@ function MedianString(dna, k) {
 	for (let i = 0; i <= 4 ** k - 1; i += 1) {
 		const pattern = NumberToPattern(i, k);
 		const distancePattern = DistanceBetweenPatternsAndStrings(pattern, dna);
-		if (distance > distancePattern) {
+		if (distance >= distancePattern) {
 			distance = distancePattern;
 			median = pattern;
 			medians.push(pattern);

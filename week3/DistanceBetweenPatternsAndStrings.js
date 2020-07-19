@@ -1,4 +1,3 @@
-import Neighbors from '../week2/Neighbors';
 import HammingDistance from '../week2/HammingDistance';
 
 /**
